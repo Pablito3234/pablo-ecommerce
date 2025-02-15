@@ -1,0 +1,9 @@
+/home/pablo/Documents/DEV/pablo-ecommerce/user-service/src/main/java/com/pablo/user_service/UserServiceApplication.java
+/home/pablo/Documents/DEV/pablo-ecommerce/user-service/src/main/java/com/pablo/user_service/config/JwtAuthenticationFilter.java
+/home/pablo/Documents/DEV/pablo-ecommerce/user-service/src/main/java/com/pablo/user_service/config/JwtProperties.java
+/home/pablo/Documents/DEV/pablo-ecommerce/user-service/src/main/java/com/pablo/user_service/config/JwtService.java
+/home/pablo/Documents/DEV/pablo-ecommerce/user-service/src/main/java/com/pablo/user_service/controllers/UserController.java
+/home/pablo/Documents/DEV/pablo-ecommerce/user-service/src/main/java/com/pablo/user_service/entities/Role.java
+/home/pablo/Documents/DEV/pablo-ecommerce/user-service/src/main/java/com/pablo/user_service/entities/UserEntity.java
+/home/pablo/Documents/DEV/pablo-ecommerce/user-service/src/main/java/com/pablo/user_service/repositories/UserRepository.java
+/home/pablo/Documents/DEV/pablo-ecommerce/user-service/src/main/java/com/pablo/user_service/services/UserService.java
