@@ -1,9 +1,11 @@
 package com.pablo.user_service.services;
 
+import com.pablo.user_service.dtos.UserLoginDto;
 import com.pablo.user_service.dtos.UserRegisterDto;
 import com.pablo.user_service.entities.UserEntity;
 import com.pablo.user_service.repositories.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +30,17 @@ public class AuthenticationService {
         user.setEmail(input.getEmail());
         user.setPassword(passwordEncoder.encode(input.getPassword()));
         return userRepository.save(user);
+    }
+
+    public UserEntity authenticate(UserLoginDto input){
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        input.getEmail(),
+                        input.getPassword()
+                )
+        );
+
+        return userRepository.findByEmail(input.getEmail())
+                .orElseThrow();
     }
 }
