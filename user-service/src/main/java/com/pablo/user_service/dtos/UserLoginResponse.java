@@ -9,4 +9,9 @@ public class UserLoginResponse {
     private String token;
 
     private long expirationTime;
+
+    public UserLoginResponse(String token, long expirationTime) {
+        this.token = token;
+        this.expirationTime = expirationTime;
+    }
 }
