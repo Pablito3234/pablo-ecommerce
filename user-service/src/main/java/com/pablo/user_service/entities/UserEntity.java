@@ -25,6 +25,10 @@ public class UserEntity implements UserDetails {
     @Getter
     private String email;
 
+    private String firstName;
+
+    private String lastName;
+
     private String password;
 
     @Enumerated(EnumType.STRING)
