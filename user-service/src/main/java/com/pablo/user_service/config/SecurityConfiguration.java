@@ -1,5 +1,6 @@
 package com.pablo.user_service.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -21,6 +22,7 @@ public class SecurityConfiguration {
     private final AuthenticationProvider authenticationProvider;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
+    @Autowired
     public SecurityConfiguration(
             JwtAuthenticationFilter jwtAuthenticationFilter,
             AuthenticationProvider authenticationProvider
@@ -51,7 +53,7 @@ public class SecurityConfiguration {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(List.of("http://localhost:8005"));
+        configuration.setAllowedOrigins(List.of("http://localhost:8080"));
         configuration.setAllowedMethods(List.of("GET","POST"));
         configuration.setAllowedHeaders(List.of("Authorization","Content-Type"));
 

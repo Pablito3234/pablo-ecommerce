@@ -4,6 +4,7 @@ import com.pablo.user_service.dtos.UserLoginDto;
 import com.pablo.user_service.dtos.UserRegisterDto;
 import com.pablo.user_service.entities.UserEntity;
 import com.pablo.user_service.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,6 +16,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
 
+    @Autowired
     public AuthenticationService(UserRepository userRepository
             , PasswordEncoder passwordEncoder
             , AuthenticationManager authenticationManager) {
