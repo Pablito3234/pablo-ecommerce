@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Data
-@Setter
-@Getter
 @Entity
 @Table(name = "_user")
 @NoArgsConstructor
@@ -22,13 +20,9 @@ public class UserEntity implements UserDetails {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
 
-    @Getter
     private String email;
-
     private String firstName;
-
     private String lastName;
-
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -39,34 +33,26 @@ public class UserEntity implements UserDetails {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
-    @Override
-    //Using email as username
     public String getUsername() {return this.email;}
-
-    @Override
-    public String getPassword(){return this.password;}
+    public void setUsername(String email) {this.email = email;}
 
     @Override
     public boolean isAccountNonExpired() {
         return UserDetails.super.isAccountNonExpired();
-        //TODO implement expired account logic
     }
 
     @Override
     public boolean isAccountNonLocked() {
         return UserDetails.super.isAccountNonLocked();
-        //TODO implement locked accounnts logic
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
         return UserDetails.super.isCredentialsNonExpired();
-        //TODO implements expired credentials logic
     }
 
     @Override
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();
-        //TODO implement enable and disbling accounts logic
     }
 }
