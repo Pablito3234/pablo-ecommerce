@@ -4,6 +4,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +20,7 @@ import javax.crypto.SecretKey;
 @Service
 public class JwtService {
     @Value("${security.jwt.secret-key}")
-    private SecretKey secretKey;
+    private String secretKey;
 
     @Value("${security.jwt.expiration-time}")
     private long jwtExpiration;
@@ -82,7 +84,7 @@ public class JwtService {
     }
 
     private SecretKey getSignInKey() {
-        byte[] keyBytes = Decoders.BASE64.decode((CharSequence) secretKey);
+        byte[] keyBytes = secretKey.getBytes(StandardCharsets.UTF_8);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
