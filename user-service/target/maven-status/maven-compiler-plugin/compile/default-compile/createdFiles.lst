@@ -1,8 +1,8 @@
 com/pablo/user_service/entities/Role.class
 com/pablo/user_service/config/SecurityConfiguration.class
 com/pablo/user_service/services/AuthenticationService.class
-com/pablo/user_service/UserServiceApplication.class
 com/pablo/user_service/config/ApplicationConfiguration.class
+com/pablo/user_service/UserServiceApplication.class
 com/pablo/user_service/entities/UserEntity.class
 com/pablo/user_service/dtos/UserLoginDto.class
 com/pablo/user_service/services/UserService.class

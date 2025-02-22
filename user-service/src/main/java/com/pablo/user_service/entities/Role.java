@@ -1,15 +1,18 @@
 package com.pablo.user_service.entities;
-    public enum Role {
-        ADMIN("admin"),
-        USER("user");
+import com.fasterxml.jackson.annotation.JsonValue;
 
-        private final String role;
+public enum Role {
+    ADMIN("admin"),
+    USER("user");
 
-        Role(String role) {
-            this.role = role;
-        }
+    private final String value;
 
-        public String getValue() {
-            return role;
-        }
+    Role(String value) {
+        this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+        return value;
+    }
 }

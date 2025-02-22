@@ -2,6 +2,7 @@ package com.pablo.user_service.services;
 
 import com.pablo.user_service.dtos.UserLoginDto;
 import com.pablo.user_service.dtos.UserRegisterDto;
+import com.pablo.user_service.entities.Role;
 import com.pablo.user_service.entities.UserEntity;
 import com.pablo.user_service.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class AuthenticationService {
         user.setLastName(input.getLastName());
         user.setEmail(input.getEmail());
         user.setPassword(passwordEncoder.encode(input.getPassword()));
+        user.setRole(Role.USER);
         return userRepository.save(user);
     }
 
