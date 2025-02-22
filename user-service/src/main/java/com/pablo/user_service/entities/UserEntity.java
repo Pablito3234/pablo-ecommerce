@@ -20,7 +20,9 @@ public class UserEntity implements UserDetails {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
 
+    @Column(unique = true)
     private String email;
+
     private String firstName;
     private String lastName;
     private String password;
