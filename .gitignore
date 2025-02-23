@@ -44,6 +44,8 @@
 *.iml
 *.ipr
 **/target/
+.idea/
+**/.idea/
 
 # CMake
 cmake-build-*/
